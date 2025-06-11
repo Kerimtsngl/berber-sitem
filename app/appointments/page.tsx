@@ -11,7 +11,7 @@ import {
   XCircleIcon,
 } from "@heroicons/react/24/outline";
 import { addDays, format, isSameDay } from "date-fns";
-import tr from "date-fns/locale/tr";
+import { tr } from "date-fns/locale";
 
 export default function AppointmentsPage() {
   const [services, setServices] = useState([]);
