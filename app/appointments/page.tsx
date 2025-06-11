@@ -272,10 +272,10 @@ export default function AppointmentsPage() {
           <div className="flex justify-center py-8">
             <ArrowPathIcon className="w-8 h-8 animate-spin text-blue-500" />
           </div>
-        ) : !Array.isArray(appointments) ? (
+        ) : !Array.isArray(appointments) && (appointments as any)?.error ? (
           <div className="flex flex-col items-center gap-2 text-red-500 py-8">
             <XCircleIcon className="w-6 h-6" />
-            {appointments?.error ? appointments.error : "Randevular yüklenemedi."}
+            {(appointments as any).error ? (appointments as any).error : "Randevular yüklenemedi."}
           </div>
         ) : appointments.length === 0 ? (
           <div className="flex flex-col items-center gap-2 text-gray-400 py-8">
